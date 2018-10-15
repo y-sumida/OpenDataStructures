@@ -27,6 +27,16 @@ class ArrayStack<T> {
         array[index] = element
         return before
     }
+
+    func remove(at index: Int) -> T? {
+        guard 0 <= index,  index < count else { return nil }
+        let before = array[index]
+        var newArray: [T] = array[0..<index].map { $0 }
+        newArray.append(contentsOf: array[index..<count].map { $0 })
+        array = newArray
+        count -= 1
+        return before
+    }
 }
 
 // Test
@@ -46,3 +56,6 @@ assert(hoge.get(at: 1) == 99)
 
 assert(hoge.set(at: 0, element: 10) == 1)
 assert(hoge.get(at:0) == 10)
+
+assert(hoge.remove(at: 1) == 99)
+assert(hoge.size() == 1)

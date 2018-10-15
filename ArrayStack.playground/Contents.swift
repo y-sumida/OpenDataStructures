@@ -20,6 +20,13 @@ class ArrayStack<T> {
         array = newArray
         count += 1
     }
+
+    func set(at index: Int, element: T) -> T? {
+        guard 0 <= index,  index < count else { return nil }
+        let before = array[index]
+        array[index] = element
+        return before
+    }
 }
 
 // Test
@@ -37,3 +44,5 @@ assert(hoge.size() == 2)
 assert(hoge.get(at: 0) == 1)
 assert(hoge.get(at: 1) == 99)
 
+assert(hoge.set(at: 0, element: 10) == 1)
+assert(hoge.get(at:0) == 10)

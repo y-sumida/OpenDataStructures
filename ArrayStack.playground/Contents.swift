@@ -1,5 +1,5 @@
 class ArrayStack<T> {
-    private var array: [T] = []
+    private var array: [T?] = []
     private var count = 0
 
     func size() -> Int {
@@ -14,7 +14,7 @@ class ArrayStack<T> {
     func add(at index: Int, element: T) {
         // Todo resize()
         guard 0 <= index,  index <= count else { return }
-        var newArray: [T] = array[0..<index].map { $0 }
+        var newArray: [T?] = array[0..<index].map { $0 }
         newArray.append(element)
         newArray.append(contentsOf: array[index..<count].map { $0 })
         array = newArray
@@ -31,7 +31,7 @@ class ArrayStack<T> {
     func remove(at index: Int) -> T? {
         guard 0 <= index,  index < count else { return nil }
         let before = array[index]
-        var newArray: [T] = array[0..<index].map { $0 }
+        var newArray: [T?] = array[0..<index].map { $0 }
         newArray.append(contentsOf: array[index..<count].map { $0 })
         array = newArray
         count -= 1

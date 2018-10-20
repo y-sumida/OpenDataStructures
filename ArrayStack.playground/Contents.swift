@@ -1,5 +1,5 @@
 class ArrayStack<T> {
-    private var array: [T?] = []
+    private var array: [T?] = [nil]
     private var count = 0
 
     private func resize() {
@@ -20,12 +20,14 @@ class ArrayStack<T> {
     }
 
     func add(at index: Int, element: T) {
-        // Todo resize()
         guard 0 <= index,  index <= count else { return }
-        var newArray: [T?] = array[0..<index].map { $0 }
-        newArray.append(element)
-        newArray.append(contentsOf: array[index..<count].map { $0 })
-        array = newArray
+        if count + 1 > array.count { resize() }
+        array.enumerated().forEach { offset, e in
+            if offset >= index, offset < array.count - 1 {
+                array[offset + 1] = array[offset]
+            }
+        }
+        array[index] = element
         count += 1
     }
 

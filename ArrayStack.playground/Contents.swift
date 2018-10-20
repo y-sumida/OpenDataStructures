@@ -2,6 +2,14 @@ class ArrayStack<T> {
     private var array: [T?] = []
     private var count = 0
 
+    private func resize() {
+        var newArray = [T?](repeating: nil, count: max(2 * count, 1))
+        array.enumerated().forEach { offset ,e in
+            newArray[offset] = e
+        }
+        array = newArray
+    }
+
     func size() -> Int {
         return count
     }

@@ -41,9 +41,11 @@ class ArrayStack<T> {
     func remove(at index: Int) -> T? {
         guard 0 <= index,  index < count else { fatalError("Index out of range.") }
         let before = array[index]
-        var newArray: [T?] = array[0..<index].map { $0 }
-        newArray.append(contentsOf: array[index..<count].map { $0 })
-        array = newArray
+        array.enumerated().forEach { offset, e in
+            if offset >= index, offset < array.count - 1 {
+                array[offset - 1] = array[offset]
+            }
+        }
         count -= 1
         return before
     }

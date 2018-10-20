@@ -15,12 +15,12 @@ class ArrayStack<T> {
     }
 
     func get(at index: Int) -> T? {
-        guard 0 <= index,  index < count else { return nil}
+        guard 0 <= index,  index < count else { fatalError("Index out of range.") }
         return array[index]
     }
 
     func add(at index: Int, element: T) {
-        guard 0 <= index,  index <= count else { return }
+        guard 0 <= index,  index <= count else { fatalError("Index out of range.") }
         if count + 1 > array.count { resize() }
         array.enumerated().forEach { offset, e in
             if offset >= index, offset < array.count - 1 {
@@ -32,14 +32,14 @@ class ArrayStack<T> {
     }
 
     func set(at index: Int, element: T) -> T? {
-        guard 0 <= index,  index < count else { return nil }
+        guard 0 <= index,  index < count else { fatalError("Index out of range.") }
         let before = array[index]
         array[index] = element
         return before
     }
 
     func remove(at index: Int) -> T? {
-        guard 0 <= index,  index < count else { return nil }
+        guard 0 <= index,  index < count else { fatalError("Index out of range.") }
         let before = array[index]
         var newArray: [T?] = array[0..<index].map { $0 }
         newArray.append(contentsOf: array[index..<count].map { $0 })
@@ -53,9 +53,6 @@ class ArrayStack<T> {
 var hoge = ArrayStack<Int>()
 
 assert(hoge.size() == 0)
-assert(hoge.get(at: 0) == nil)
-assert(hoge.get(at: -1) == nil)
-
 hoge.add(at: 0, element: 99)
 assert(hoge.size() == 1)
 assert(hoge.get(at: 0) == 99)
@@ -69,3 +66,4 @@ assert(hoge.get(at:0) == 10)
 
 assert(hoge.remove(at: 1) == 99)
 assert(hoge.size() == 1)
+

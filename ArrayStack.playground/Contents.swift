@@ -31,6 +31,12 @@ class ArrayStack<T> {
         count += 1
     }
 
+    func add(element: T) {
+        if count + 1 > array.count { resize() }
+        array[count] = element
+        count += 1
+    }
+
     func set(at index: Int, element: T) -> T? {
         guard 0 <= index,  index < count else { fatalError("Index out of range.") }
         let before = array[index]
@@ -76,4 +82,6 @@ assert(hoge.size() == 1)
 
 hoge.removeAll()
 assert(hoge.size() == 0)
-
+hoge.add(element: 100)
+assert(hoge.get(at:0) == 100)
+assert(hoge.size() == 1)

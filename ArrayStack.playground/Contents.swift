@@ -4,8 +4,8 @@ class ArrayStack<T> {
 
     private func resize() {
         var newArray = [T?](repeating: nil, count: max(2 * count, 1))
-        array.enumerated().forEach { offset ,e in
-            newArray[offset] = e
+        for i in 0..<count {
+            newArray[i] = array[i]
         }
         array = newArray
     }
@@ -49,6 +49,11 @@ class ArrayStack<T> {
         count -= 1
         return before
     }
+
+    func removeAll() {
+        count = 0
+        resize()
+    }
 }
 
 // Test
@@ -68,4 +73,7 @@ assert(hoge.get(at:0) == 10)
 
 assert(hoge.remove(at: 1) == 99)
 assert(hoge.size() == 1)
+
+hoge.removeAll()
+assert(hoge.size() == 0)
 

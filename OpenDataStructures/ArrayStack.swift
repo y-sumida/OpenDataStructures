@@ -1,8 +1,8 @@
 class ArrayStack<T> {
-    private var array: [T?] = [nil]
-    private var count = 0
+    fileprivate var array: [T?] = [nil]
+    fileprivate var count = 0
 
-    private func resize() {
+    fileprivate func resize() {
         var newArray = [T?](repeating: nil, count: max(2 * count, 1))
         for i in 0..<count {
             newArray[i] = array[i]
@@ -60,5 +60,32 @@ class ArrayStack<T> {
     func removeAll() {
         count = 0
         resize()
+    }
+}
+
+class FastArrayStack<T>: ArrayStack<T> {
+    override fileprivate func resize() {
+        var newArray = [T?](repeating: nil, count: max(2 * count, 1))
+        newArray[0..<count] = array[0..<count]
+        array = newArray
+    }
+
+    override func add(at index: Int, element: T) {
+        guard 0 <= index,  index <= count else { fatalError("Index out of range.") }
+        if count + 1 > array.count { resize() }
+
+        if index < count {
+            array[index + 1..<count + 1] = array[index..<count]
+        }
+        array[index] = element
+        count += 1
+    }
+
+    override func remove(at index: Int) -> T? {
+        guard 0 <= index,  index < count else { fatalError("Index out of range.") }
+        let before = array[index]
+        array[index..<count - 1] = array[index + 1..<count]
+        count -= 1
+        return before
     }
 }

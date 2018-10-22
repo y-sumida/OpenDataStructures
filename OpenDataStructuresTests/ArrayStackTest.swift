@@ -16,10 +16,10 @@ class ArrayStackTests: XCTestCase {
 
     func testArrayAdd() {
         arrayStack.add(at: 0, element: 99)
-        arrayStack.add(at: 1, element: 100)
+        arrayStack.add(at: 0, element: 100)
         XCTAssertEqual(arrayStack.size(), 2)
-        XCTAssertEqual(arrayStack.get(at: 0), 99)
-        XCTAssertEqual(arrayStack.get(at: 1), 100)
+        XCTAssertEqual(arrayStack.get(at: 0), 100)
+        XCTAssertEqual(arrayStack.get(at: 1), 99)
     }
 
     func testArraySet() {

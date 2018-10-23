@@ -14,9 +14,9 @@ class ArrayStack<T> {
         return count
     }
 
-    func get(at index: Int) -> T? {
-        guard 0 <= index,  index < count else { fatalError("Index out of range.") }
-        return array[index]
+    func get(at index: Int) -> T {
+        guard 0 <= index,  index < count, let t = array[index] else { fatalError("Index out of range.") }
+        return t
     }
 
     func add(at index: Int, element: T) {

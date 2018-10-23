@@ -44,4 +44,15 @@ class ArrayStackTests: XCTestCase {
         arrayStack.removeAll()
         XCTAssertEqual(arrayStack.size(), 0)
     }
+
+    func testSpeedCheck() {
+        arrayStack.add(at: 0, element: 99)
+        arrayStack.add(at: 1, element: 100)
+        for i in 0...10000 {
+            arrayStack.add(at: 1, element: i)
+        }
+        for _ in 0...10000 {
+            let _ = arrayStack.remove(at: 1)
+        }
+    }
 }

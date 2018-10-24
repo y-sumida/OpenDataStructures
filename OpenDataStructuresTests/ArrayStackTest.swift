@@ -55,4 +55,11 @@ class ArrayStackTests: XCTestCase {
             let _ = arrayStack.remove(at: 1)
         }
     }
+
+    func testArrayStackOptional() {
+        let arrayStackOptional = ArrayStack<Int?>()
+
+        arrayStackOptional.add(at: 0, element: nil)
+        XCTAssertEqual(arrayStackOptional.get(at: 0), nil)
+    }
 }

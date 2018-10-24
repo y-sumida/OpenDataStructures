@@ -13,4 +13,13 @@ class ArrayQueueTests: XCTestCase {
     func testQueueInitialCount() {
         XCTAssertEqual(arrayQueue.size(), 0)
     }
+
+    func testQueueAdd() {
+        let _ = arrayQueue.add(x: 10)
+        let _ = arrayQueue.add(x: 20)
+        let _ = arrayQueue.add(x: 30)
+        XCTAssertEqual(arrayQueue.size(), 3)
+        let x = arrayQueue.remove()
+        XCTAssertEqual(x, 10)
+    }
 }

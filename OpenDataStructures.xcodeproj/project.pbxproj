@@ -19,6 +19,7 @@
 		A93752F0217F5C6A003FFAC7 /* ArrayQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93752EF217F5C6A003FFAC7 /* ArrayQueue.swift */; };
 		A93752F2217F5CAA003FFAC7 /* ArrayQueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93752F1217F5CAA003FFAC7 /* ArrayQueueTests.swift */; };
 		A93752F3217F5CC5003FFAC7 /* ArrayQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93752EF217F5C6A003FFAC7 /* ArrayQueue.swift */; };
+		A93752F52181F922003FFAC7 /* ArrayDequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93752F42181F922003FFAC7 /* ArrayDequeue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		A93752ED217E1143003FFAC7 /* FastArrayStackTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastArrayStackTest.swift; sourceTree = "<group>"; };
 		A93752EF217F5C6A003FFAC7 /* ArrayQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayQueue.swift; sourceTree = "<group>"; };
 		A93752F1217F5CAA003FFAC7 /* ArrayQueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayQueueTests.swift; sourceTree = "<group>"; };
+		A93752F42181F922003FFAC7 /* ArrayDequeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayDequeue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				A93752C2217DFCE7003FFAC7 /* AppDelegate.swift */,
+				A93752F42181F922003FFAC7 /* ArrayDequeue.swift */,
 				A93752EF217F5C6A003FFAC7 /* ArrayQueue.swift */,
 				A93752E2217DFD2C003FFAC7 /* ArrayStack.swift */,
 				A93752C9217DFCE9003FFAC7 /* Assets.xcassets */,
@@ -213,6 +216,7 @@
 			files = (
 				A93752C5217DFCE7003FFAC7 /* ViewController.swift in Sources */,
 				A93752E3217DFD2C003FFAC7 /* ArrayStack.swift in Sources */,
+				A93752F52181F922003FFAC7 /* ArrayDequeue.swift in Sources */,
 				A93752C3217DFCE7003FFAC7 /* AppDelegate.swift in Sources */,
 				A93752F0217F5C6A003FFAC7 /* ArrayQueue.swift in Sources */,
 			);

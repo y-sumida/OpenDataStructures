@@ -23,7 +23,24 @@ class ArrayDequeue<T> {
 
     func set(at index: Int, element: T) -> T {
         guard let t = array[(head + index) % array.count] else { fatalError("Index out of range.") }
-        array[(head + index) % array.count] = elemtnt
+        array[(head + index) % array.count] = element
         return t
+    }
+
+    func add(at index: Int, element: T) {
+        guard 0 <= index,  index <= count else { fatalError("Index out of range.") }
+        if count + 1 > array.count { resize() }
+        if Double(index) < Double(count) / Double(2) {
+            head = (head == 0) ? array.count - 1 : head - 1
+            for k in 0..<index {
+                array[(head + k) % array.count] = array[(head + k + 1) % array.count]
+            }
+        } else {
+            for k in (index..<count).reversed() {
+                array[(head + k) % array.count] = array[(head + k - 1) % array.count]
+            }
+        }
+        array[(head + index) % array.count] = element
+        count += 1
     }
 }

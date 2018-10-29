@@ -36,7 +36,7 @@ class ArrayDequeue<T> {
                 array[(head + k) % array.count] = array[(head + k + 1) % array.count]
             }
         } else { // a[i]...a[count-1]を右にずらす
-            for k in (index..<count).reversed() {
+            for k in (index...count).reversed() {
                 array[(head + k) % array.count] = array[(head + k - 1) % array.count]
             }
         }

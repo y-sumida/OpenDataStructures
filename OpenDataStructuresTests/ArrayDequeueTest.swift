@@ -1,7 +1,7 @@
 import XCTest
 @testable import OpenDataStructures
 
-class ArrayDeueueTests: XCTestCase {
+class ArrayDequeueTests: XCTestCase {
     var arrayDequeue = ArrayDequeue<Int>()
 
     override func setUp() {

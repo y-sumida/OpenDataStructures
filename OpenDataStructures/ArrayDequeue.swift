@@ -43,4 +43,21 @@ class ArrayDequeue<T> {
         array[(head + index) % array.count] = element
         count += 1
     }
+
+    func remove(at index: Int) -> T {
+        guard let x = array[(head + index) % array.count] else { fatalError() }
+        if Double(index) < Double(count) / Double(2) { // a[0] ... a[i-1]を右にずらす
+            for k in (1...index).reversed() {
+                array[(head + k) % array.count] = array[(head + k - 1) % array.count]
+            }
+            head = (head + 1) % array.count
+        } else { // a[i+1]...a[count-1]を左にずらす
+            for k in index..<count {
+                array[(head + k) % array.count] = array[(head + k + 1) % array.count]
+            }
+        }
+        count -= 1
+        if 3 * count < array.count { resize() }
+        return x
+    }
 }

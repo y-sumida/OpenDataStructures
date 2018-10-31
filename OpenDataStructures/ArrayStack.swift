@@ -22,9 +22,9 @@ class ArrayStack<T> {
     func add(at index: Int, element: T) {
         guard 0 <= index,  index <= count else { fatalError("Index out of range.") }
         if count + 1 > array.count { resize() }
-        array.enumerated().forEach { offset, e in
-            if offset >= index, offset < array.count - 1 {
-                array[offset + 1] = array[offset]
+        if index < count {
+            for k in (index+1...count).reversed() {
+                array[k] = array[k - 1]
             }
         }
         array[index] = element
@@ -37,9 +37,8 @@ class ArrayStack<T> {
         count += 1
     }
 
-    func set(at index: Int, element: T) -> T? {
-        guard 0 <= index,  index < count else { fatalError("Index out of range.") }
-        let before = array[index]
+    func set(at index: Int, element: T) -> T {
+        guard 0 <= index,  index < count, let before = array[index] else { fatalError("Index out of range.") }
         array[index] = element
         return before
     }

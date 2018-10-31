@@ -17,9 +17,11 @@ class ArrayStackTests: XCTestCase {
     func testArrayAdd() {
         arrayStack.add(at: 0, element: 99)
         arrayStack.add(at: 0, element: 100)
-        XCTAssertEqual(arrayStack.size(), 2)
-        XCTAssertEqual(arrayStack.get(at: 0), 100)
-        XCTAssertEqual(arrayStack.get(at: 1), 99)
+        arrayStack.add(at: 0, element: 101)
+        XCTAssertEqual(arrayStack.size(), 3)
+        XCTAssertEqual(arrayStack.get(at: 0), 101)
+        XCTAssertEqual(arrayStack.get(at: 1), 100)
+        XCTAssertEqual(arrayStack.get(at: 2), 99)
     }
 
     func testArraySet() {

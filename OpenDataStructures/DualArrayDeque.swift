@@ -16,7 +16,7 @@ class DualArrayDeque<T> {
     }
 
     func get(at index: Int) -> T {
-        if (index < front.size()) {
+        if index < front.size() {
             return front.get(at: front.size() - index - 1)
         } else {
             return back.get(at: index - front.size())
@@ -24,7 +24,7 @@ class DualArrayDeque<T> {
     }
 
     func set(at index: Int, element: T) -> T {
-        if (index < front.size()) {
+        if index < front.size() {
             return front.set(at: front.size() - index - 1, element: element)
         } else {
             return back.set(at: index - front.size(), element: element)

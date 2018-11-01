@@ -29,4 +29,12 @@ class DualArrayDequeTests: XCTestCase {
         let y = dualArrayDeque.remove(at: 1)
         XCTAssertEqual(y, 10)
     }
+
+    func testQueueBalance() {
+        let _ = dualArrayDeque.add(at: 0, element: 10)
+        let _ = dualArrayDeque.add(at: 0, element: 20)
+        let _ = dualArrayDeque.add(at: 0, element: 30)
+        let _ = dualArrayDeque.add(at: 0, element: 40)
+        // 内部の2つのArrayStackはprivateなのでテスト書けない
+    }
 }

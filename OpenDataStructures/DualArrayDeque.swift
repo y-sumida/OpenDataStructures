@@ -12,7 +12,7 @@ class DualArrayDeque<T> {
         } else {
             back.add(at: index - front.size(), element: element)
         }
-        // TODO: balance
+        balance()
     }
 
     func get(at index: Int) -> T {
@@ -38,7 +38,26 @@ class DualArrayDeque<T> {
         } else {
             x = back.remove(at: index - front.size())
         }
-        // TODO: balance
+        balance()
         return x
+    }
+
+    func balance() {
+        if 3 * front.size() < back.size() ||  3 * back.size() < front.size() {
+            let n = front.size() + back.size()
+            let nf = n / 2
+            let af = ArrayStack<T>()
+            for i in 0..<nf {
+                af.add(at: nf - i - 1, element: get(at: i))
+            }
+
+            let nb = n - nf
+            let ab = ArrayStack<T>()
+            for i in 0..<nb {
+                ab.add(at: i, element: get(at: nf + i))
+            }
+            front = af
+            back = ab
+        }
     }
 }

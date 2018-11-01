@@ -19,4 +19,14 @@ class DualArrayDequeTests: XCTestCase {
         XCTAssertEqual(dualArrayDeque.get(at: 1), 20)
         XCTAssertEqual(dualArrayDeque.get(at: 2), 10)
     }
+
+    func testQueueRmove() {
+        let _ = dualArrayDeque.add(at: 0, element: 10)
+        let _ = dualArrayDeque.add(at: 0, element: 20)
+        let _ = dualArrayDeque.add(at: 0, element: 30)
+        let x = dualArrayDeque.remove(at: 0)
+        XCTAssertEqual(x, 30)
+        let y = dualArrayDeque.remove(at: 1)
+        XCTAssertEqual(y, 10)
+    }
 }

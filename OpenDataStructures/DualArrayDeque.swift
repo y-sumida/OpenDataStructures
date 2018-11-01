@@ -30,4 +30,15 @@ class DualArrayDeque<T> {
             return back.set(at: index - front.size(), element: element)
         }
     }
+
+    func remove(at index: Int) -> T {
+        var x: T
+        if index < front.size() {
+            x = front.remove(at: front.size() - index - 1)
+        } else {
+            x = back.remove(at: index - front.size())
+        }
+        // TODO: balance
+        return x
+    }
 }

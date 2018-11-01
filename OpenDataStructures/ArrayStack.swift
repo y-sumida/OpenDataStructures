@@ -43,13 +43,11 @@ class ArrayStack<T> {
         return before
     }
 
-    func remove(at index: Int) -> T? {
-        guard 0 <= index,  index < count else { fatalError("Index out of range.") }
-        let before = array[index]
-        array.enumerated().forEach { offset, e in
-            if offset >= index, offset < array.count - 1 {
-                array[offset - 1] = array[offset]
-            }
+    func remove(at index: Int) -> T {
+        guard 0 <= index,  index < count, let before = array[index] else { fatalError("Index out of range.") }
+        if count + 1 > array.count { resize() }
+        for k in (index..<count) {
+            array[k] = array[k + 1]
         }
         count -= 1
         if count >= 3 * count { resize() }
@@ -80,9 +78,8 @@ class FastArrayStack<T>: ArrayStack<T> {
         count += 1
     }
 
-    override func remove(at index: Int) -> T? {
-        guard 0 <= index,  index < count else { fatalError("Index out of range.") }
-        let before = array[index]
+    override func remove(at index: Int) -> T {
+        guard 0 <= index,  index < count, let before = array[index] else { fatalError("Index out of range.") }
         array[index..<count - 1] = array[index + 1..<count]
         count -= 1
         return before

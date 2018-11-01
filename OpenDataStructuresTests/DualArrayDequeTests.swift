@@ -35,6 +35,11 @@ class DualArrayDequeTests: XCTestCase {
         let _ = dualArrayDeque.add(at: 0, element: 20)
         let _ = dualArrayDeque.add(at: 0, element: 30)
         let _ = dualArrayDeque.add(at: 0, element: 40)
-        // 内部の2つのArrayStackはprivateなのでテスト書けない
+        let _ = dualArrayDeque.add(at: 0, element: 50)
+        let _ = dualArrayDeque.add(at: 0, element: 60)
+        let _ = dualArrayDeque.add(at: 0, element: 70)
+        let _ = dualArrayDeque.add(at: 0, element: 80)
+        XCTAssertEqual(dualArrayDeque.get(at: 0), 80)
+        XCTAssertEqual(dualArrayDeque.get(at: 7), 10)
     }
 }

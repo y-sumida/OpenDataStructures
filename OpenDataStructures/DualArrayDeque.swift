@@ -48,7 +48,7 @@ class DualArrayDeque<T> {
             let nf = n / 2
             let af = ArrayStack<T>()
             for i in 0..<nf {
-                af.add(at: nf - i - 1, element: get(at: i))
+                af.add(at: 0, element: get(at: i))
             }
 
             let nb = n - nf

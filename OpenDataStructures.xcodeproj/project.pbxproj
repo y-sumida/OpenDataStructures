@@ -25,6 +25,7 @@
 		A93752FA2189E747003FFAC7 /* DualArrayDeque.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93752F92189E746003FFAC7 /* DualArrayDeque.swift */; };
 		A93752FC2189E8D5003FFAC7 /* DualArrayDequeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93752FB2189E8D5003FFAC7 /* DualArrayDequeTests.swift */; };
 		A93752FD2189E90C003FFAC7 /* DualArrayDeque.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93752F92189E746003FFAC7 /* DualArrayDeque.swift */; };
+		A937530121932B94003FFAC7 /* SLList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A937530021932B93003FFAC7 /* SLList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		A93752F621835B77003FFAC7 /* ArrayDequeueTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayDequeueTest.swift; sourceTree = "<group>"; };
 		A93752F92189E746003FFAC7 /* DualArrayDeque.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DualArrayDeque.swift; sourceTree = "<group>"; };
 		A93752FB2189E8D5003FFAC7 /* DualArrayDequeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DualArrayDequeTests.swift; sourceTree = "<group>"; };
+		A937530021932B93003FFAC7 /* SLList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				A93752CE217DFCE9003FFAC7 /* Info.plist */,
 				A93752CB217DFCE9003FFAC7 /* LaunchScreen.storyboard */,
 				A93752C6217DFCE7003FFAC7 /* Main.storyboard */,
+				A937530021932B93003FFAC7 /* SLList.swift */,
 				A93752C4217DFCE7003FFAC7 /* ViewController.swift */,
 			);
 			path = OpenDataStructures;
@@ -227,6 +230,7 @@
 			files = (
 				A93752C5217DFCE7003FFAC7 /* ViewController.swift in Sources */,
 				A93752E3217DFD2C003FFAC7 /* ArrayStack.swift in Sources */,
+				A937530121932B94003FFAC7 /* SLList.swift in Sources */,
 				A93752F52181F922003FFAC7 /* ArrayDequeue.swift in Sources */,
 				A93752C3217DFCE7003FFAC7 /* AppDelegate.swift in Sources */,
 				A93752FA2189E747003FFAC7 /* DualArrayDeque.swift in Sources */,

@@ -1,5 +1,5 @@
 class SLList<T> {
-    struct Node {
+    class Node {
         private var x: T
         var next: Node?
         init(value: T) {

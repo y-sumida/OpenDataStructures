@@ -1,6 +1,6 @@
 class SLList<T> {
     class Node {
-        private var x: T
+        let x: T
         var next: Node?
         init(value: T) {
             x = value
@@ -24,5 +24,18 @@ class SLList<T> {
         }
         n += 1
         return value
+    }
+
+    func pop() -> T? {
+        if n == 0 {
+            return nil
+        }
+
+        let x = head?.x
+        head = head?.next
+        if n - 1 == 0 {
+            tail = nil
+        }
+        return x
     }
 }

@@ -17,4 +17,15 @@ class SLListTests: XCTestCase {
         let _ = list.push(value: 20)
         XCTAssertEqual(list.size(), 2)
     }
+
+    func testListPop() {
+        let _ = list.push(value: 10)
+        let _ = list.push(value: 20)
+        let x = list.pop()
+        XCTAssertEqual(x, 20)
+        let y = list.pop()
+        XCTAssertEqual(y, 10)
+        let z = list.pop()
+        XCTAssertEqual(z, nil)
+    }
 }

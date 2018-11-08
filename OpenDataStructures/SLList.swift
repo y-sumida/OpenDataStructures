@@ -33,7 +33,8 @@ class SLList<T> {
 
         let x = head?.x
         head = head?.next
-        if n - 1 == 0 {
+        n -= 1
+        if n == 0 {
             tail = nil
         }
         return x

@@ -23,9 +23,12 @@ class SLListTests: XCTestCase {
         let _ = list.push(value: 20)
         let x = list.pop()
         XCTAssertEqual(x, 20)
+        XCTAssertEqual(list.size(), 1)
         let y = list.pop()
         XCTAssertEqual(y, 10)
+        XCTAssertEqual(list.size(), 0)
         let z = list.pop()
         XCTAssertEqual(z, nil)
+        XCTAssertEqual(list.size(), 0)
     }
 }

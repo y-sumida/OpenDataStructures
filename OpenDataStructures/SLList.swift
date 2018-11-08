@@ -11,6 +11,10 @@ class SLList<T> {
     private var tail: Node?
     private var n: Int = 0
 
+    func size() -> Int {
+        return n
+    }
+
     func push(value: T) -> T {
         let u = Node(value: value)
         u.next = head

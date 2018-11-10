@@ -31,4 +31,15 @@ class SLListTests: XCTestCase {
         XCTAssertEqual(z, nil)
         XCTAssertEqual(list.size(), 0)
     }
+
+    func testListAdd() {
+        let _ = list.add(value: 10)
+        let _ = list.add(value: 20)
+        let _ = list.add(value: 30)
+        XCTAssertEqual(list.size(), 3)
+        let x = list.remove()
+        XCTAssertEqual(x, 10)
+        let y = list.remove()
+        XCTAssertEqual(y, 20)
+    }
 }

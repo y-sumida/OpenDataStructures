@@ -39,4 +39,21 @@ class SLList<T> {
         }
         return x
     }
+
+    func remove() -> T? {
+        // remove と pop はただのエイリアスっぽい
+        return pop()
+    }
+
+    func add(value: T) -> Bool {
+        let u = Node(value: value)
+        if n == 0 {
+            head = u
+        } else {
+            tail?.next = u
+        }
+        tail = u
+        n += 1
+        return true
+    }
 }

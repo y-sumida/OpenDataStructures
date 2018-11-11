@@ -19,4 +19,8 @@ class DLList<T> {
         dummy?.next = dummy
         dummy?.prev = dummy
     }
+
+    func size() -> Int {
+        return n
+    }
 }

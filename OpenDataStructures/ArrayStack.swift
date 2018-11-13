@@ -22,10 +22,9 @@ class ArrayStack<T> {
     func add(at index: Int, element: T) {
         guard 0 <= index,  index <= count else { fatalError("Index out of range.") }
         if count + 1 > array.count { resize() }
-        if index < count {
-            for k in (index+1...count).reversed() {
-                array[k] = array[k - 1]
-            }
+        (0...count).reversed().forEach { k in
+            guard index < k else { return }
+            array[k] = array[k - 1]
         }
         array[index] = element
         count += 1

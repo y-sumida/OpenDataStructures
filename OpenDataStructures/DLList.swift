@@ -53,4 +53,18 @@ class DLList<T> {
         }
         return p
     }
+
+    func addBefore(node: Node, value: T) -> Node {
+        let u = Node(value: value)
+        u.prev = node.prev
+        u.next = node
+        u.next?.prev = u
+        u.prev?.next = u
+        n += 1
+        return u
+    }
+
+    func add(at index: Int, value: T) {
+        addBefore(node: getNode(at: index), value: value)
+    }
 }

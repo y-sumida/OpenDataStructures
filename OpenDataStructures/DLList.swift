@@ -54,17 +54,17 @@ class DLList<T> {
         return p
     }
 
-    func addBefore(node: Node, value: T) -> Node {
+    private func addBefore(node: Node, value: T) -> Node {
         let u = Node(value: value)
         u.prev = node.prev
         u.next = node
         u.next?.prev = u
         u.prev?.next = u
         n += 1
-        return u
+        return u //返す必要ないのでは？
     }
 
     func add(at index: Int, value: T) {
-        addBefore(node: getNode(at: index), value: value)
+        let _ = addBefore(node: getNode(at: index), value: value)
     }
 }

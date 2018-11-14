@@ -67,4 +67,17 @@ class DLList<T> {
     func add(at index: Int, value: T) {
         let _ = addBefore(node: getNode(at: index), value: value)
     }
+
+    private func remove(node: Node) {
+        node.prev?.next = node.next
+        node.next?.prev = node.prev
+        n -= 1
+    }
+
+    func remove(at index: Int) -> T? {
+        let w = getNode(at: index)
+        let x = w.x
+        remove(node: w)
+        return x
+    }
 }

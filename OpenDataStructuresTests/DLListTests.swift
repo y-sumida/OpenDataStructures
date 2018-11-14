@@ -18,4 +18,13 @@ class DLListTests: XCTestCase {
         XCTAssertEqual(list.get(at: 1), 10)
     }
 
+    func testListRemove() {
+        list.add(at: 0, value: 10)
+        list.add(at: 1, value: 20)
+        list.add(at: 2, value: 30)
+        list.add(at: 3, value: 40)
+        let x = list.remove(at: 1)
+        XCTAssertEqual(x, 20)
+        XCTAssertEqual(list.get(at: 1), 30)
+    }
 }

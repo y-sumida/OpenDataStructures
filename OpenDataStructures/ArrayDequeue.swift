@@ -63,9 +63,6 @@ class ArrayDequeue<T> {
 }
 
 class BDeque<T>: ArrayDequeue<T> {
-    private var n = 0 // nodeの数
-    private var b = 0 // blockの数
-
     init(block_size: Int) {
         super.init()
         array =  [T?](repeating: nil, count: block_size)

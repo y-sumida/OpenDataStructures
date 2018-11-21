@@ -12,6 +12,8 @@
 		A92528EB2198684700BD5103 /* DLListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92528EA2198684700BD5103 /* DLListTests.swift */; };
 		A92528EC2198685D00BD5103 /* DLList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92528E82198664B00BD5103 /* DLList.swift */; };
 		A925294021A59E7C00BD5103 /* SEList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A925293F21A59E7C00BD5103 /* SEList.swift */; };
+		A925294221A5A43900BD5103 /* SEListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A925294121A5A43900BD5103 /* SEListTests.swift */; };
+		A925294321A5A44600BD5103 /* SEList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A925293F21A59E7C00BD5103 /* SEList.swift */; };
 		A93752C3217DFCE7003FFAC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93752C2217DFCE7003FFAC7 /* AppDelegate.swift */; };
 		A93752C5217DFCE7003FFAC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93752C4217DFCE7003FFAC7 /* ViewController.swift */; };
 		A93752C8217DFCE7003FFAC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A93752C6217DFCE7003FFAC7 /* Main.storyboard */; };
@@ -48,6 +50,7 @@
 		A92528E82198664B00BD5103 /* DLList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLList.swift; sourceTree = "<group>"; };
 		A92528EA2198684700BD5103 /* DLListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLListTests.swift; sourceTree = "<group>"; };
 		A925293F21A59E7C00BD5103 /* SEList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEList.swift; sourceTree = "<group>"; };
+		A925294121A5A43900BD5103 /* SEListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEListTests.swift; sourceTree = "<group>"; };
 		A93752BF217DFCE7003FFAC7 /* OpenDataStructures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenDataStructures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A93752C2217DFCE7003FFAC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A93752C4217DFCE7003FFAC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +139,7 @@
 				A93752FB2189E8D5003FFAC7 /* DualArrayDequeTests.swift */,
 				A93752ED217E1143003FFAC7 /* FastArrayStackTest.swift */,
 				A93752D9217DFCE9003FFAC7 /* Info.plist */,
+				A925294121A5A43900BD5103 /* SEListTests.swift */,
 				A93753022194713A003FFAC7 /* SLListTests.swift */,
 			);
 			path = OpenDataStructuresTests;
@@ -261,6 +265,7 @@
 				A93752FC2189E8D5003FFAC7 /* DualArrayDequeTests.swift in Sources */,
 				A93752EE217E1143003FFAC7 /* FastArrayStackTest.swift in Sources */,
 				A93752E4217DFE12003FFAC7 /* ArrayStack.swift in Sources */,
+				A925294221A5A43900BD5103 /* SEListTests.swift in Sources */,
 				A92528EC2198685D00BD5103 /* DLList.swift in Sources */,
 				A93752F721835B77003FFAC7 /* ArrayDequeueTest.swift in Sources */,
 				A93752D8217DFCE9003FFAC7 /* ArrayStackTest.swift in Sources */,
@@ -271,6 +276,7 @@
 				A93752F2217F5CAA003FFAC7 /* ArrayQueueTests.swift in Sources */,
 				A93752FD2189E90C003FFAC7 /* DualArrayDeque.swift in Sources */,
 				A93752F3217F5CC5003FFAC7 /* ArrayQueue.swift in Sources */,
+				A925294321A5A44600BD5103 /* SEList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

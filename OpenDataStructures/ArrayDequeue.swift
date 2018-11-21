@@ -1,7 +1,7 @@
 class ArrayDequeue<T> {
-    private var array: [T?] = [nil]
-    private var head = 0
-    private var count = 0
+    fileprivate var array: [T?] = [nil]
+    fileprivate var head = 0
+    fileprivate var count = 0
 
     private func resize() {
         var newArray = [T?](repeating: nil, count: max(2 * count, 1))
@@ -59,5 +59,15 @@ class ArrayDequeue<T> {
         count -= 1
         if 3 * count < array.count { resize() }
         return x
+    }
+}
+
+class BDeque<T>: ArrayDequeue<T> {
+    private var n = 0 // nodeの数
+    private var b = 0 // blockの数
+
+    init(block_size: Int) {
+        super.init()
+        array =  [T?](repeating: nil, count: block_size)
     }
 }

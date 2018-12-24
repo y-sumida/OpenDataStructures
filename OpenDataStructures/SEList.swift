@@ -25,6 +25,18 @@ class SEList<T> {
         dummy?.prev = dummy
     }
 
+    func get(i: Int) -> T? {
+        let l = getLocation(i: i)
+        return l.u?.deque.get(at: l.j)
+    }
+
+    func set(i: Int, x: T) -> T? {
+       let l = getLocation(i: i)
+        let y = l.u?.deque.get(at: l.j)
+        _ = l.u?.deque.set(at: l.j, element: x)
+        return y
+    }
+
     func getLocation(i: Int) -> Location {
         var ell = Location()
         if i < n / 2 {

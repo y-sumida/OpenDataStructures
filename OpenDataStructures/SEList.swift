@@ -9,14 +9,9 @@ class SEList<T> {
         }
     }
 
-    class Location {
+    struct Location {
         var u: Node?
-        var j: Int
-
-        init(u: Node, j: Int) {
-            self.u = u
-            self.j = j
-        }
+        var j: Int = 0
     }
 
     private var n: Int = 0 // node count

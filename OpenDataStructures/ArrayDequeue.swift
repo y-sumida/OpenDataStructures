@@ -34,7 +34,7 @@ class ArrayDequeue<T> {
     func add(at index: Int, element: T) {
         guard 0 <= index,  index <= count else { fatalError("Index out of range.") }
         if count + 1 > array.count { resize() }
-        if Double(index) < Double(count) / Double(2) { // a[0] ... a[i-1]を左にずらす
+        if Double(index) <= Double(count) / Double(2) { // a[0] ... a[i-1]を左にずらす
             head = (head == 0) ? array.count - 1 : head - 1
             for k in 0..<index {
                 array[(head + k) % array.count] = array[(head + k + 1) % array.count]

@@ -37,6 +37,25 @@ class SEList<T> {
         return y
     }
 
+    func add(x: T) {
+        guard let d = dummy, let prev = d.prev else { return }
+        var last = prev
+        if last === d || last.deque.size() == b + 1 {
+            last = addBefore(x: d)
+        }
+        last.deque.add(element: x)
+        n += 1
+    }
+
+    func addBefore(x: Node) -> Node {
+        let u = Node(block_size: 10)
+        u.prev = x.prev
+        u.next = x
+        u.next?.prev = u
+        u.prev?.next = u
+        return u
+    }
+
     func getLocation(i: Int) -> Location {
         var ell = Location()
         if i < n / 2 {

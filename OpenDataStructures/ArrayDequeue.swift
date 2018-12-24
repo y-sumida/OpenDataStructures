@@ -27,6 +27,10 @@ class ArrayDequeue<T> {
         return t
     }
 
+    func add(element: T) {
+        add(at: count, element: element)
+    }
+
     func add(at index: Int, element: T) {
         guard 0 <= index,  index <= count else { fatalError("Index out of range.") }
         if count + 1 > array.count { resize() }

@@ -24,4 +24,32 @@ class SEList<T> {
         dummy?.next = dummy
         dummy?.prev = dummy
     }
+
+    func getLocation(i: Int) -> Location {
+        var ell = Location()
+        if i < n / 2 {
+            guard var u = dummy?.next else { return ell }
+            var k = i
+            while(k >= u.deque.size()) {
+                if let next = u.next {
+                    k -= u.deque.size()
+                    u = next
+                }
+            }
+            ell.u = u
+            ell.j = k
+        } else {
+            guard var u = dummy?.next else { return ell }
+            var idx = n
+            while(i < idx) {
+                if let prev = u.prev {
+                    u = prev
+                    idx -= u.deque.size()
+                }
+            }
+            ell.u = u
+            ell.j = i - idx
+        }
+        return ell
+    }
 }

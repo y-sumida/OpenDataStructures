@@ -48,7 +48,7 @@ class SEList<T> {
     }
 
     func addBefore(x: Node) -> Node {
-        let u = Node(block_size: 10)
+        let u = Node(block_size: b)
         u.prev = x.prev
         u.next = x
         u.next?.prev = u

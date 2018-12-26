@@ -69,6 +69,6 @@ class ArrayDequeue<T> {
 class BDeque<T>: ArrayDequeue<T> {
     init(block_size: Int) {
         super.init()
-        array =  [T?](repeating: nil, count: block_size)
+        array =  [T?](repeating: nil, count: block_size + 1)
     }
 }

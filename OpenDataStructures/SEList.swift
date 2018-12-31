@@ -47,6 +47,33 @@ class SEList<T> {
         n += 1
     }
 
+    func add(i: Int, x: T) {
+        if i == n {
+            add(x: x)
+            return
+        }
+
+        let l = getLocation(i: i)
+        guard let u = l.u, let next = u.next else { return }
+        var u_ = u
+        var r = 0
+        while (r < b && u_ !== dummy && u_.deque.size() == b + 1) {
+            u_ = next
+            r += 1
+        }
+        if r == b { // b + 1 要素を含むブロックが b 個
+            // TODO あとで
+        }
+        if u === dummy { // 末尾まで到達したので新たなノードをつくる
+            u_ = addBefore(x: u)
+        }
+        while (u_ !== u) {// 逆方向に要素をシフトする
+            // TODO あとで
+        }
+        u_.deque.add(at: l.j, element: x)
+        n += 1
+    }
+
     func addBefore(x: Node) -> Node {
         let u = Node(block_size: b)
         u.prev = x.prev

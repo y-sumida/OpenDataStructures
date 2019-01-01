@@ -64,7 +64,8 @@ class SEList<T> {
             u = addBefore(x: l.u)
         }
         while (u !== l.u) {// 逆方向に要素をシフトする
-            // TODO あとで
+            u.deque.add(at: 0, element: u.prev.deque.remove(at: u.prev.deque.size() - 1))
+            u = u.prev
         }
        u.deque.add(at: l.j, element: x)
         n += 1

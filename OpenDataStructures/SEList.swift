@@ -67,7 +67,7 @@ class SEList<T> {
             u.deque.add(at: 0, element: u.prev.deque.remove(at: u.prev.deque.size() - 1))
             u = u.prev
         }
-       u.deque.add(at: l.j, element: x)
+        u.deque.add(at: l.j, element: x)
         n += 1
     }
 
@@ -81,8 +81,8 @@ class SEList<T> {
     }
 
     func getLocation(i: Int) -> Location {
+        var u = dummy.next
         if i < n / 2 {
-            var u = dummy.next
             var k = i
             while(k >= u.deque.size()) {
                 k -= u.deque.size()
@@ -90,7 +90,6 @@ class SEList<T> {
             }
             return Location(u: u, j: k)
         } else {
-            var u = dummy.next
             var idx = n
             while(i < idx) {
                 u = u.prev

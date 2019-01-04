@@ -58,7 +58,8 @@ class SEList<T> {
             r += 1
         }
         if r == b { // b + 1 要素を含むブロックが b 個
-            // TODO あとで
+            spread(u: l.u)
+            u = l.u
         }
         if l.u === dummy { // 末尾まで到達したので新たなノードをつくる
             u = addBefore(x: l.u)
@@ -96,6 +97,20 @@ class SEList<T> {
                 idx -= u.deque.size()
             }
             return Location(u: u, j: i - idx)
+        }
+    }
+
+    private func spread(u: Node) {
+        var w = u
+        for _ in 0..<b {
+            w = w.next
+        }
+        w = addBefore(x: w)
+        while w !== u {
+            while w.deque.size() < b {
+                w.deque.add(at: 0, element: w.deque.remove(at: w.prev.deque.size() - 1))
+            }
+            w = w.prev
         }
     }
 }

@@ -53,7 +53,7 @@ class SEList<T> {
         let l = getLocation(i: i)
         var u = l.u
         var r = 0
-        while (r < b && u !== dummy && u.deque.size() == b + 1) {
+        while r < b && u !== dummy && u.deque.size() == b + 1 {
             u = l.u.next
             r += 1
         }
@@ -64,7 +64,7 @@ class SEList<T> {
         if l.u === dummy { // 末尾まで到達したので新たなノードをつくる
             u = addBefore(x: l.u)
         }
-        while (u !== l.u) {// 逆方向に要素をシフトする
+        while u !== l.u {// 逆方向に要素をシフトする
             u.deque.add(at: 0, element: u.prev.deque.remove(at: u.prev.deque.size() - 1))
             u = u.prev
         }
@@ -85,14 +85,14 @@ class SEList<T> {
         var u = dummy.next
         if i < n / 2 {
             var k = i
-            while(k >= u.deque.size()) {
+            while k >= u.deque.size() {
                 k -= u.deque.size()
                 u = u.next
             }
             return Location(u: u, j: k)
         } else {
             var idx = n
-            while(i < idx) {
+            while i < idx {
                 u = u.prev
                 idx -= u.deque.size()
             }

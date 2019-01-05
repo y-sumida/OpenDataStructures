@@ -72,7 +72,7 @@ class SEList<T> {
         n += 1
     }
 
-    func addBefore(x: Node) -> Node {
+    private func addBefore(x: Node) -> Node {
         let u = Node(block_size: b)
         u.prev = x.prev
         u.next = x
@@ -81,7 +81,7 @@ class SEList<T> {
         return u
     }
 
-    func getLocation(i: Int) -> Location {
+    private func getLocation(i: Int) -> Location {
         var u = dummy.next
         if i < n / 2 {
             var k = i

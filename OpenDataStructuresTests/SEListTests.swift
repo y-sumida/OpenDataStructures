@@ -2,7 +2,7 @@ import XCTest
 @testable import OpenDataStructures
 
 class SEListTests: XCTestCase {
-    var list = SEList<Int>(block_size: 10)
+    var list = SEList<Int>(block_size: 1)
 
     override func setUp() {
     }

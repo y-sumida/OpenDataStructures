@@ -24,11 +24,17 @@ class SEList<T> {
     }
 
     func get(i: Int) -> T {
+        guard i >= 0 else { fatalError() }
+        guard i <= n - 1 else { fatalError() }
+
         let l = getLocation(i: i)
         return l.u.deque.get(at: l.j)
     }
 
     func set(i: Int, x: T) -> T {
+        guard i >= 0 else { fatalError() }
+        guard i <= n - 1 else { fatalError() }
+
         let l = getLocation(i: i)
         let y = l.u.deque.get(at: l.j)
         _ = l.u.deque.set(at: l.j, element: x)

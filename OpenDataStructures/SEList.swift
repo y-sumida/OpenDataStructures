@@ -88,7 +88,7 @@ class SEList<T> {
             r += 1
         }
         if r == b { // b - 1要素を含むブロックがb個あった
-          // TODO gather
+            gather(u: l.u)
         }
         u = l.u
         _ = u.deque.remove(at: l.j)
@@ -142,6 +142,16 @@ class SEList<T> {
                 w.deque.add(at: 0, element: w.deque.remove(at: w.prev.deque.size() - 1))
             }
             w = w.prev
+        }
+    }
+
+    private func gather(u: Node) {
+        var w = u
+        for _ in 0..<b - 1 {
+            while w.deque.size() < b {
+                w.deque.add(element: w.next.deque.remove(at: 0))
+            }
+            remove(u: w)
         }
     }
 

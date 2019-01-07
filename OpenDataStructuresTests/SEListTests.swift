@@ -28,4 +28,15 @@ class SEListTests: XCTestCase {
         let z = list.get(i: 2)
         XCTAssertEqual(z, 30)
     }
+
+    func testRemove() {
+        list.add(x: 10)
+        list.add(x: 20)
+        list.add(x: 30)
+        list.add(x: 40)
+
+        _ = list.remove(i: 1)
+        let x = list.get(i: 1)
+        XCTAssertEqual(x, 30)
+    }
 }

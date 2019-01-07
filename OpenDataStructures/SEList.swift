@@ -78,6 +78,31 @@ class SEList<T> {
         n += 1
     }
 
+    func remove(i: Int) -> T {
+        let l = getLocation(i: i)
+        let y = l.u.deque.get(at: l.j)
+        var u = l.u
+        var r = 0
+        while r < b && u !== dummy && u.deque.size() == b - 1 {
+            u = u.next
+            r += 1
+        }
+        if r == b { // b - 1要素を含むブロックがb個あった
+          // TODO gather
+        }
+        u = l.u
+        _ = u.deque.remove(at: l.j)
+        while u.deque.size() < b - 1 && u.next !== dummy {
+            u.deque.add(element: u.next.deque.remove(at: 0))
+            u = u.next
+        }
+        if u.deque.size() == 0 {
+            remove(u: u)
+        }
+        n -= 1
+        return y
+    }
+
     private func addBefore(x: Node) -> Node {
         let u = Node(block_size: b)
         u.prev = x.prev
@@ -118,5 +143,10 @@ class SEList<T> {
             }
             w = w.prev
         }
+    }
+
+    private func remove(u: Node) {
+        u.prev.next = u.next
+        u.next.prev = u.prev
     }
 }

@@ -146,7 +146,7 @@ class SEList<T> {
     }
 
     private func gather(u: Node) {
-        var w = u
+        let w = u
         for _ in 0..<b - 1 {
             while w.deque.size() < b {
                 w.deque.add(element: w.next.deque.remove(at: 0))

@@ -56,4 +56,17 @@ class SLList<T> {
         n += 1
         return true
     }
+
+    func secondLast() -> T? {
+        var u = head
+        var x: T?
+
+        while u != nil {
+            if u?.next != nil {
+                x = u?.x
+            }
+            u = u?.next
+        }
+        return x
+    }
 }

@@ -42,4 +42,12 @@ class SLListTests: XCTestCase {
         let y = list.remove()
         XCTAssertEqual(y, 20)
     }
+
+    func testSecondLast() {
+        let _ = list.add(value: 10)
+        XCTAssertEqual(list.secondLast(), nil) // 要素1の時の末尾の1つ前だからnilでいい？
+        let _ = list.add(value: 20)
+        let _ = list.add(value: 30)
+        XCTAssertEqual(list.secondLast(), 20)
+    }
 }

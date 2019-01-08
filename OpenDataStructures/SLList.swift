@@ -69,4 +69,15 @@ class SLList<T> {
         }
         return x
     }
+
+    func get(i: Int) -> T? {
+        guard i >= 0 else { fatalError() }
+        guard i <= n - 1 else { fatalError() }
+
+        var u = head
+        for _ in 0..<i {
+           u = u?.next
+        }
+        return u?.x
+    }
 }

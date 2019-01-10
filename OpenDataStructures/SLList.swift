@@ -80,4 +80,17 @@ class SLList<T> {
         }
         return u?.x
     }
+
+    func set(i: Int, x: T) {
+        guard i >= 0 else { fatalError() }
+        guard i <= n - 1 else { fatalError() }
+
+        var u = head
+        for _ in 0..<i - 1 {
+            u = u?.next
+        }
+        let new = Node(value: x)
+        new.next = u?.next?.next
+        u?.next = new
+    }
 }

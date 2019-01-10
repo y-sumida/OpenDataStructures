@@ -59,4 +59,14 @@ class SLListTests: XCTestCase {
         XCTAssertEqual(list.get(i: 1), 20)
         XCTAssertEqual(list.get(i: 2), 30)
     }
+
+    func testSet() {
+        let _ = list.add(value: 10)
+        let _ = list.add(value: 20)
+        let _ = list.add(value: 30)
+        list.set(i: 1, x: 99)
+        XCTAssertEqual(list.get(i: 0), 10)
+        XCTAssertEqual(list.get(i: 1), 99)
+        XCTAssertEqual(list.get(i: 2), 30)
+    }
 }

@@ -114,12 +114,21 @@ class SLList<T> {
         guard i <= n - 1 else { return nil }
 
         var u = head
-        for _ in 0..<i - 1 {
-            u = u?.next
+        let x: T?
+        if i > 0 {
+            for _ in 0..<i - 1 {
+                u = u?.next
+            }
+            x = u?.next?.x
+            u?.next = u?.next?.next
+        } else {
+            x = head?.x
+            head = head?.next
         }
-        let target = u?.next
-        u?.next = u?.next?.next
         n -= 1
-        return target?.x
+        if n == 0 {
+            tail = nil
+        }
+        return x
     }
 }

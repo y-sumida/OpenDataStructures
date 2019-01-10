@@ -90,5 +90,9 @@ class SLListTests: XCTestCase {
         XCTAssertEqual(list.get(i: 0), 10)
         XCTAssertEqual(list.get(i: 1), 30)
         XCTAssertEqual(list.size(), 2)
+        let y = list.remove(i: 0)
+        XCTAssertEqual(y, 10)
+        XCTAssertEqual(list.get(i: 0), 30)
+        XCTAssertEqual(list.size(), 1)
     }
 }

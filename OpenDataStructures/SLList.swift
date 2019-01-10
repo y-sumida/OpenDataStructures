@@ -108,4 +108,18 @@ class SLList<T> {
         n += 1
         return true
     }
+
+    func remove(i: Int) -> T? {
+        guard i >= 0 else { return nil }
+        guard i <= n - 1 else { return nil }
+
+        var u = head
+        for _ in 0..<i - 1 {
+            u = u?.next
+        }
+        let target = u?.next
+        u?.next = u?.next?.next
+        n -= 1
+        return target?.x
+    }
 }

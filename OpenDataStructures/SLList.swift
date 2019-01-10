@@ -99,12 +99,17 @@ class SLList<T> {
         guard i <= n - 1 else { return false }
 
         var u = head
-        for _ in 0..<i - 1 {
-            u = u?.next
-        }
         let new = Node(value: x)
-        new.next = u?.next
-        u?.next = new
+        if i > 0 {
+            for _ in 0..<i - 1 {
+                u = u?.next
+            }
+            new.next = u?.next
+            u?.next = new
+        } else {
+            new.next = head
+            head = new
+        }
         n += 1
         return true
     }

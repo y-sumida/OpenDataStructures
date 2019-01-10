@@ -93,4 +93,19 @@ class SLList<T> {
         new.next = u?.next?.next
         u?.next = new
     }
+
+    func add(i: Int, x: T) -> Bool {
+        guard i >= 0 else { return false}
+        guard i <= n - 1 else { return false }
+
+        var u = head
+        for _ in 0..<i - 1 {
+            u = u?.next
+        }
+        let new = Node(value: x)
+        new.next = u?.next
+        u?.next = new
+        n += 1
+        return true
+    }
 }

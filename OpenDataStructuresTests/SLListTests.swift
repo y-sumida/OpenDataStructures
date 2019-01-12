@@ -111,5 +111,9 @@ class SLListTests: XCTestCase {
         XCTAssertEqual(list.get(i: 0), 30)
         XCTAssertEqual(list.get(i: 1), 20)
         XCTAssertEqual(list.get(i: 2), 10)
+        list.reverse()
+        XCTAssertEqual(list.get(i: 0), 10)
+        XCTAssertEqual(list.get(i: 1), 20)
+        XCTAssertEqual(list.get(i: 2), 30)
     }
 }

@@ -102,4 +102,14 @@ class SLListTests: XCTestCase {
         XCTAssertEqual(list.get(i: 0), 30)
         XCTAssertEqual(list.size(), 1)
     }
+
+    func testReverse() {
+        let _ = list.add(value: 10)
+        let _ = list.add(value: 20)
+        let _ = list.add(value: 30)
+        list.reverse()
+        XCTAssertEqual(list.get(i: 0), 30)
+        XCTAssertEqual(list.get(i: 1), 20)
+        XCTAssertEqual(list.get(i: 2), 10)
+    }
 }

@@ -136,4 +136,18 @@ class SLList<T> {
         }
         return x
     }
+
+    func reverse() {
+        let h = head
+
+        var u = head
+        for _ in 0..<n - 1 {
+            head = u?.next
+            u?.next = tail?.next
+            tail?.next = u
+            u = head
+        }
+        head = tail
+        tail = h
+    }
 }

@@ -80,4 +80,24 @@ class DLList<T> {
         remove(node: w)
         return x
     }
+
+    func truncate(i: Int) {
+        var p: Node
+        if Double(i) < Double(n) / 2.0  {
+            p = dummy.next!
+            for _ in 0..<i {
+                p = p.next!
+            }
+        } else {
+            p = dummy
+            if i < n {
+                for _ in (i+1...n).reversed() {
+                    p = p.prev!
+                }
+            }
+        }
+        p.next = dummy
+        dummy.prev = p
+        n = n - (n - i) + 1
+    }
 }

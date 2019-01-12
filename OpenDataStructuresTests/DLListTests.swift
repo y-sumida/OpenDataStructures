@@ -27,4 +27,15 @@ class DLListTests: XCTestCase {
         XCTAssertEqual(x, 20)
         XCTAssertEqual(list.get(at: 1), 30)
     }
+
+    func testTruncate() {
+        list.add(at: 0, value: 10)
+        list.add(at: 1, value: 20)
+        list.add(at: 2, value: 30)
+        list.add(at: 3, value: 40)
+        list.truncate(i: 1)
+        XCTAssertEqual(list.size(), 2)
+        XCTAssertEqual(list.get(at: 0), 10)
+        XCTAssertEqual(list.get(at: 1), 20)
+    }
 }

@@ -38,4 +38,13 @@ class DLListTests: XCTestCase {
         XCTAssertEqual(list.get(at: 0), 10)
         XCTAssertEqual(list.get(at: 1), 20)
     }
+
+    func testIsPalindrome() {
+        list.add(at: 0, value: 10)
+        list.add(at: 1, value: 20)
+        XCTAssertEqual(list.isPalindrome(), false)
+        list.add(at: 2, value: 20)
+        list.add(at: 3, value: 10)
+        XCTAssertEqual(list.isPalindrome(), true)
+    }
 }

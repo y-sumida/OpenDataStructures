@@ -1,4 +1,4 @@
-class DLList<T> {
+class DLList<T: Equatable> {
     class Node {
         var x: T?
         lazy var next: Node = self
@@ -97,5 +97,18 @@ class DLList<T> {
         p.next = dummy
         dummy.prev = p
         n = n - (n - i) + 1
+    }
+
+    func isPalindrome() -> Bool {
+        var h = dummy
+        var t = dummy
+        for _ in 0..<n / 2 {
+            if h.next.x != t.prev.x {
+                return false
+            }
+            h = h.next
+            t = t.prev
+        }
+        return true
     }
 }

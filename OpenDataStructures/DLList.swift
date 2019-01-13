@@ -1,8 +1,8 @@
 class DLList<T> {
     class Node {
         var x: T?
-        var next: Node?
-        var prev: Node?
+        lazy var next: Node = self
+        lazy var prev: Node = self
 
         init() {}
 
@@ -16,8 +16,6 @@ class DLList<T> {
 
     init() {
         dummy = Node()
-        dummy.next = dummy
-        dummy.prev = dummy
     }
 
     func size() -> Int {
@@ -39,15 +37,15 @@ class DLList<T> {
     private func getNode(at index: Int) -> Node {
         var p: Node
         if Double(index) < Double(n) / 2.0  {
-            p = dummy.next!
+            p = dummy.next
             for _ in 0..<index {
-                p = p.next!
+                p = p.next
             }
         } else {
             p = dummy
             if index < n {
                 for _ in (index+1...n).reversed() {
-                    p = p.prev!
+                    p = p.prev
                 }
             }
         }
@@ -58,8 +56,8 @@ class DLList<T> {
         let u = Node(value: value)
         u.prev = node.prev
         u.next = node
-        u.next?.prev = u
-        u.prev?.next = u
+        u.next.prev = u
+        u.prev.next = u
         n += 1
         return u //返す必要ないのでは？
     }
@@ -69,8 +67,8 @@ class DLList<T> {
     }
 
     private func remove(node: Node) {
-        node.prev?.next = node.next
-        node.next?.prev = node.prev
+        node.prev.next = node.next
+        node.next.prev = node.prev
         n -= 1
     }
 
@@ -84,15 +82,15 @@ class DLList<T> {
     func truncate(i: Int) {
         var p: Node
         if Double(i) < Double(n) / 2.0  {
-            p = dummy.next!
+            p = dummy.next
             for _ in 0..<i {
-                p = p.next!
+                p = p.next
             }
         } else {
             p = dummy
             if i < n {
                 for _ in (i+1...n).reversed() {
-                    p = p.prev!
+                    p = p.prev
                 }
             }
         }

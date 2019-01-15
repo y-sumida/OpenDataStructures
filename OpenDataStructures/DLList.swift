@@ -129,4 +129,12 @@ class DLList<T: Equatable> {
         tail.next = head
         head.prev = tail
     }
+
+    func absorb(l: DLList) {
+        let tail = dummy.prev
+
+        for _ in 0..<l.size() {
+            add(at: size(), value: (l.remove(at: 0))!)
+        }
+    }
 }

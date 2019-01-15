@@ -111,4 +111,22 @@ class DLList<T: Equatable> {
         }
         return true
     }
+
+    func rotate(r: Int) {
+        guard r > 0 else { return }
+        let diff = r % n
+
+        let head = dummy.next
+        let tail = dummy.prev
+        var d = dummy
+        for _ in 0...diff {
+            d = d.next
+        }
+
+        dummy.next = d
+        dummy.prev = d.prev
+        d.prev = dummy
+        tail.next = head
+        head.prev = tail
+    }
 }

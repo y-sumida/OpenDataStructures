@@ -47,4 +47,23 @@ class DLListTests: XCTestCase {
         list.add(at: 3, value: 10)
         XCTAssertEqual(list.isPalindrome(), true)
     }
+
+    func testRotate() {
+        list.add(at: 0, value: 10)
+        list.add(at: 1, value: 20)
+        list.add(at: 2, value: 30)
+        list.add(at: 3, value: 40)
+
+        list.rotate(r: 0)
+        XCTAssertEqual(list.get(at: 0), 10)
+        XCTAssertEqual(list.get(at: 3), 40)
+
+        list.rotate(r: 1)
+        XCTAssertEqual(list.get(at: 0), 20)
+        XCTAssertEqual(list.get(at: 3), 10)
+
+        list.rotate(r: 2)
+        XCTAssertEqual(list.get(at: 0), 40)
+        XCTAssertEqual(list.get(at: 3), 30)
+    }
 }

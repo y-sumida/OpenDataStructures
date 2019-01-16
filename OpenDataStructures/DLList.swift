@@ -131,7 +131,7 @@ class DLList<T: Equatable> {
     }
 
     func absorb(l: DLList) {
-        let tail = dummy.prev
+        let _ = dummy.prev
 
         for _ in 0..<l.size() {
             add(at: size(), value: (l.remove(at: 0))!)

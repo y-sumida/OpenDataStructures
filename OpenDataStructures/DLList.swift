@@ -34,7 +34,14 @@ class DLList<T: Equatable> {
         return y
     }
 
-    func getNode(at index: Int) -> Node {
+    func pop() -> Node {
+        let h = dummy.next
+        dummy.next = h.next
+        n -= 1
+        return h
+    }
+
+    private func getNode(at index: Int) -> Node {
         var p: Node
         if Double(index) < Double(n) / 2.0  {
             p = dummy.next
@@ -141,7 +148,7 @@ class DLList<T: Equatable> {
     func takeFirst(l: DLList) {
         guard l.size() > 0 else { return }
 
-        let node = l.getNode(at: 0)
+        let node = l.pop()
         let tail = dummy.prev
 
         tail.next = node
@@ -149,6 +156,5 @@ class DLList<T: Equatable> {
         node.next = dummy
         dummy.prev = node
         n += 1
-        //_ = l.remove(at: 0) TODO remove()だとnodeのprev,nextが書き換わってしまう
     }
 }

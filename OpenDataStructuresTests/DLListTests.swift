@@ -87,7 +87,7 @@ class DLListTests: XCTestCase {
 
     func testTakeFirst() {
         let list2 = DLList<Int>()
-
+        
         list.add(at: 0, value: 10)
         list.add(at: 1, value: 20)
         list.add(at: 2, value: 30)
@@ -98,6 +98,7 @@ class DLListTests: XCTestCase {
         list.takeFirst(l: list2)
 
         XCTAssertEqual(list.size(), 4)
+        XCTAssertEqual(list2.size(), 1)
         XCTAssertEqual(list.get(at: 3), 100)
     }
 }

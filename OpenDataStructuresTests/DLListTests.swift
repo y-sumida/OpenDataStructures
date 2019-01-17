@@ -84,4 +84,20 @@ class DLListTests: XCTestCase {
         XCTAssertEqual(list.get(at: 4), 100)
         XCTAssertEqual(list.get(at: 5), 200)
     }
+
+    func testTakeFirst() {
+        let list2 = DLList<Int>()
+
+        list.add(at: 0, value: 10)
+        list.add(at: 1, value: 20)
+        list.add(at: 2, value: 30)
+
+        list2.add(at: 0, value: 100)
+        list2.add(at: 1, value: 200)
+
+        list.takeFirst(l: list2)
+
+        XCTAssertEqual(list.size(), 4)
+        XCTAssertEqual(list.get(at: 3), 100)
+    }
 }

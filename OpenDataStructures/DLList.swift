@@ -1,4 +1,4 @@
-class DLList<T: Equatable> {
+class DLList<T: Comparable> {
     class Node {
         var x: T?
         lazy var next: Node = self
@@ -156,5 +156,25 @@ class DLList<T: Equatable> {
         node.next = dummy
         dummy.prev = node
         n += 1
+    }
+
+    static func merge(l1: DLList<T>, l2: DLList<T>) -> DLList<T> {
+        let list = DLList<T>()
+
+        while l1.size() > 0 || l2.size() > 0 {
+            if l1.size() == 0 && l2.size() > 0 {
+               list.takeFirst(l: l2)
+            } else if l1.size() > 0 && l2.size() == 0 {
+               list.takeFirst(l: l1)
+            } else {
+                if l1.get(at: 0) < l2.get(at: 0) {
+                    list.takeFirst(l: l1)
+                } else {
+                    list.takeFirst(l: l2)
+                }
+            }
+        }
+
+        return list
     }
 }

@@ -101,4 +101,25 @@ class DLListTests: XCTestCase {
         XCTAssertEqual(list2.size(), 1)
         XCTAssertEqual(list.get(at: 3), 100)
     }
+
+    func testMerge() {
+        let list2 = DLList<Int>()
+
+        list.add(at: 0, value: 10)
+        list.add(at: 1, value: 20)
+        list.add(at: 2, value: 30)
+
+        list2.add(at: 0, value: 11)
+        list2.add(at: 1, value: 21)
+
+        let list3 = DLList.merge(l1: list, l2: list2)
+        XCTAssertEqual(list.size(), 0)
+        XCTAssertEqual(list2.size(), 0)
+        XCTAssertEqual(list3.size(), 5)
+        XCTAssertEqual(list3.get(at: 0), 10)
+        XCTAssertEqual(list3.get(at: 1), 11)
+        XCTAssertEqual(list3.get(at: 2), 20)
+        XCTAssertEqual(list3.get(at: 3), 21)
+        XCTAssertEqual(list3.get(at: 4), 30)
+    }
 }

@@ -73,6 +73,14 @@ class DLList<T: Comparable> {
         let _ = addBefore(node: getNode(at: index), value: value)
     }
 
+    func add(node: Node) {
+        dummy.prev.next = node
+        node.prev = dummy.prev
+        node.next = dummy
+        dummy.prev = node
+        n += 1
+    }
+
     private func remove(node: Node) {
         node.prev.next = node.next
         node.next.prev = node.prev
@@ -86,7 +94,7 @@ class DLList<T: Comparable> {
         return x
     }
 
-    func truncate(i: Int) {
+    func truncate(i: Int) -> DLList {
         var p: Node
         if Double(i) < Double(n) / 2.0  {
             p = dummy.next
@@ -101,9 +109,14 @@ class DLList<T: Comparable> {
                 }
             }
         }
+        let newlist = DLList<T>()
+        for j in (i + 1)..<n {
+            newlist.add(node: getNode(at: j))
+        }
         p.next = dummy
         dummy.prev = p
         n = n - (n - i) + 1
+        return newlist
     }
 
     func isPalindrome() -> Bool {

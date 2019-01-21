@@ -50,10 +50,8 @@ class DLList<T: Comparable> {
             }
         } else {
             p = dummy
-            if index < n {
-                for _ in (index+1...n).reversed() {
-                    p = p.prev
-                }
+            for _ in (index..<n) {
+                p = p.prev
             }
         }
         return p

@@ -34,12 +34,12 @@ class DLListTests: XCTestCase {
         list.add(at: 2, value: 30)
         list.add(at: 3, value: 40)
         let l = list.truncate(i: 1)
-        XCTAssertEqual(l.size(), 2)
-        XCTAssertEqual(l.get(at: 0), 30)
-        XCTAssertEqual(l.get(at: 1), 40)
-        XCTAssertEqual(list.size(), 2)
+        XCTAssertEqual(l.size(), 3)
+        XCTAssertEqual(l.get(at: 0), 20)
+        XCTAssertEqual(l.get(at: 1), 30)
+        XCTAssertEqual(l.get(at: 2), 40)
+        XCTAssertEqual(list.size(), 1)
         XCTAssertEqual(list.get(at: 0), 10)
-        XCTAssertEqual(list.get(at: 1), 20)
     }
 
     func testIsPalindrome() {

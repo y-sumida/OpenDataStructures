@@ -93,27 +93,14 @@ class DLList<T: Comparable> {
     }
 
     func truncate(i: Int) -> DLList {
-        var p: Node
-        if Double(i) < Double(n) / 2.0  {
-            p = dummy.next
-            for _ in 0..<i {
-                p = p.next
-            }
-        } else {
-            p = dummy
-            if i < n {
-                for _ in (i+1...n).reversed() {
-                    p = p.prev
-                }
-            }
-        }
+        let last: Node = getNode(at: i).prev
         let newlist = DLList<T>()
-        for j in (i + 1)..<n {
+        for j in i..<n {
             newlist.add(node: getNode(at: j))
         }
-        p.next = dummy
-        dummy.prev = p
-        n = n - (n - i) + 1
+        last.next = dummy
+        dummy.prev = last
+        n = n - (n - i)
         return newlist
     }
 

@@ -10,4 +10,9 @@ class SkipListSSet<T: Comparable> {
         }
     }
 
+    private var sentinel: Node
+
+    init() {
+        sentinel = Node(value: nil, height: 32)
+    }
 }

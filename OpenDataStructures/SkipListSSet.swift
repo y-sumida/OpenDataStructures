@@ -34,6 +34,17 @@ class SkipListSSet<T: Comparable> {
         return u
     }
 
+    private func pickHeight() -> Int {
+        let z = Int.random(in: 0..<4294967296) // 2^32
+        var k = 0
+        var m = 1
+        while z & m != 0 {
+            k += 1
+            m <<= 1
+        }
+        return k
+    }
+
     func find(x: T) -> T? {
         if let u = findPreNode(x: x), let first = u.next.first {
             return first?.x

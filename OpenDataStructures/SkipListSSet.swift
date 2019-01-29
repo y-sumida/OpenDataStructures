@@ -23,7 +23,7 @@ class SkipListSSet<T: Comparable> {
         var r = height
         while r >= 0 {
             while u.next[r] != nil {
-                if let r = u.next[r],let _x = r.x, _x < x {
+                if let r = u.next[r], let _x = r.x, compare(x: _x, y: x) < 0 {
                     u = r // リスト r の中で右に進む
                 } else {
                     break
@@ -32,6 +32,12 @@ class SkipListSSet<T: Comparable> {
             r -= 1 // リスト r-1 下がる
         }
         return u
+    }
+
+    private func compare(x: T, y: T) -> Int {
+        if x == y { return 0 }
+        if x < y { return -1 }
+        return 1
     }
 
     private func pickHeight() -> Int {

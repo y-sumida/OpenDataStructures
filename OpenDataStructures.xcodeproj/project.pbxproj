@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A902B49021F9F05000F25E92 /* SkipListSSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902B48F21F9F05000F25E92 /* SkipListSSet.swift */; };
+		A902B4922200927F00F25E92 /* SkipListSSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902B4912200927F00F25E92 /* SkipListSSetTests.swift */; };
 		A92528E7219473A400BD5103 /* SLList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A937530021932B93003FFAC7 /* SLList.swift */; };
 		A92528E92198664B00BD5103 /* DLList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92528E82198664B00BD5103 /* DLList.swift */; };
 		A92528EB2198684700BD5103 /* DLListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92528EA2198684700BD5103 /* DLListTests.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		A902B48F21F9F05000F25E92 /* SkipListSSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipListSSet.swift; sourceTree = "<group>"; };
+		A902B4912200927F00F25E92 /* SkipListSSetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipListSSetTests.swift; sourceTree = "<group>"; };
 		A92528E82198664B00BD5103 /* DLList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLList.swift; sourceTree = "<group>"; };
 		A92528EA2198684700BD5103 /* DLListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLListTests.swift; sourceTree = "<group>"; };
 		A925293F21A59E7C00BD5103 /* SEList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEList.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				A93752ED217E1143003FFAC7 /* FastArrayStackTest.swift */,
 				A93752D9217DFCE9003FFAC7 /* Info.plist */,
 				A925294121A5A43900BD5103 /* SEListTests.swift */,
+				A902B4912200927F00F25E92 /* SkipListSSetTests.swift */,
 				A93753022194713A003FFAC7 /* SLListTests.swift */,
 			);
 			path = OpenDataStructuresTests;
@@ -273,6 +276,7 @@
 				A92528EC2198685D00BD5103 /* DLList.swift in Sources */,
 				A93752F721835B77003FFAC7 /* ArrayDequeueTest.swift in Sources */,
 				A93752D8217DFCE9003FFAC7 /* ArrayStackTest.swift in Sources */,
+				A902B4922200927F00F25E92 /* SkipListSSetTests.swift in Sources */,
 				A93752F821835B8F003FFAC7 /* ArrayDequeue.swift in Sources */,
 				A92528E7219473A400BD5103 /* SLList.swift in Sources */,
 				A92528EB2198684700BD5103 /* DLListTests.swift in Sources */,

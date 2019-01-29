@@ -7,16 +7,18 @@ class SkipListSSet<T: Comparable> {
         init(value: T?, height: Int) {
             x = value
             self.height = height
+            next = [Node?](repeating: nil, count: height)
         }
     }
 
     private var sentinel: Node
     private var height: Int = 0
     private var n: Int = 0
-    private var stack: [Node] = []
+    private var stack: [Node?] = []
 
     init() {
         sentinel = Node(value: nil, height: 32)
+        stack = [Node?](repeating: nil, count: 32)
     }
 
     private func findPreNode(x: T) -> Node? {
@@ -42,14 +44,7 @@ class SkipListSSet<T: Comparable> {
     }
 
     private func pickHeight() -> Int {
-        let z = Int.random(in: 0..<4294967296) // 2^32
-        var k = 0
-        var m = 1
-        while z & m != 0 {
-            k += 1
-            m <<= 1
-        }
-        return k
+        return Int.random(in: 1...32)
     }
 
     func find(x: T) -> T? {
@@ -79,17 +74,17 @@ class SkipListSSet<T: Comparable> {
             if u.next[r] != nil && comp == 0 {
                return false
             }
-            r -= 1 // リスト r-1 下がる
             stack[r] = u
+            r -= 1 // リスト r-1 下がる
         }
         let w = Node(value: x, height: pickHeight())
         while height < w.height {
             height += 1
             stack[height] = sentinel // 高さが増える
         }
-        for i in 0...w.height {
-            w.next[i] = stack[i].next[i]
-            stack[i].next[i] = w
+        for i in 0..<w.height {
+            w.next[i] = stack[i]?.next[i]
+            stack[i]?.next[i] = w
         }
         n += 1
         return true

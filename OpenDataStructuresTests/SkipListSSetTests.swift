@@ -15,4 +15,11 @@ class SkipListSSetTests: XCTestCase {
         let x = list.find(x: 10)
         XCTAssertEqual(x, 10)
     }
+
+    func testRemove() {
+        let _ = list.add(x: 10)
+        XCTAssertEqual(list.find(x: 10), 10)
+        XCTAssertEqual(list.remove(x: 10), true)
+        XCTAssertEqual(list.find(x: 10), nil)
+    }
 }

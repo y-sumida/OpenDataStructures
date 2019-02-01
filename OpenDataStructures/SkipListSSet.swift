@@ -93,7 +93,6 @@ class SkipListSSet<T: Comparable> {
     func remove(x: T) -> Bool {
         var removed = false
         var u = sentinel
-        var del: Node? = nil
         var r = height
         var comp = 0
         while r >= 0 {
@@ -111,7 +110,6 @@ class SkipListSSet<T: Comparable> {
             }
             if u.next[r] != nil && comp == 0 {
                 removed = true
-                del = u.next[r]
                 u.next[r] = u.next[r]?.next[r]
                 if u === sentinel && u.next[r] == nil {
                     height -= 1 //スキップリストの高さを小さくする
